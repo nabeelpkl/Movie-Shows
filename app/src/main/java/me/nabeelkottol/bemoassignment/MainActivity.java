@@ -68,17 +68,6 @@ public class MainActivity extends AppCompatActivity {
             if (totalPages == -1 || currentPageValue < totalPages) {
               getMoviesList(currentPageValue);
             }
-           /* if (retryCount == -1 && !retryFlag) {
-
-              retryCount = (totalPages / PAGE_SIZE);
-              retryFlag = true;
-              Timber.d("Updating retyCount to %d", retryCount);
-            }
-            retryCount--;
-
-            Timber.d("New retyCount to %d", retryCount);
-
-            if (retryCount >= 0) getNotifications(++currentPageValue, NOTIFICATION_TYPE);*/
           }
         }
       }
@@ -92,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
     _disposables.dispose();
   }
 
-  private ArrayList<Movie> getMoviesList(int page) {
+  private void getMoviesList(int page) {
     Timber.i("Request params:- page number: %d, API key: %s, Language: %s", page, Constants.API_KEY,
         Constants.DEFAULT_LANGUAGE);
 
@@ -125,6 +114,5 @@ public class MainActivity extends AppCompatActivity {
             isLoading = false;
           }
         }));
-    return new ArrayList<>();
   }
 }
