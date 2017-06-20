@@ -1,6 +1,7 @@
 package me.nabeelkottol.bemoassignment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,7 +36,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
   }
 
   @Override public void onBindViewHolder(MovieListViewHolder holder, int position) {
-    Movie movie = itemList.get(position);
+    final Movie movie = itemList.get(position);
     holder.movieName.setText(movie.getTitle());
     Picasso.with(context)
         .load(RestAPIGenerator.IMAGE_BASE_URL + movie.getPoster_path())
@@ -44,6 +45,14 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
         .placeholder(R.drawable.ic_image_placeholder)
         //TODO: error placeholder
         .into(holder.movieImageView);
+
+    holder.itemView.setOnClickListener(new View.OnClickListener() {
+      @Override public void onClick(View v) {
+        Intent intent = new Intent(context, DetailActivity.class);
+        intent.putExtra(Movie.MOVIE_ID, movie.getId());
+        context.startActivity(intent);
+      }
+    });
   }
 
   @Override public int getItemCount() {

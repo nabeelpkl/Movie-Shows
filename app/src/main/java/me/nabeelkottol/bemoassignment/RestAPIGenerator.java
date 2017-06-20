@@ -8,10 +8,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
@@ -26,11 +24,11 @@ public class RestAPIGenerator {
   private static MoviesApiInterface apiInterface;
 
   public interface MoviesApiInterface {
-    @GET("now_playing") Observable<Response> getMoviesList(
-        @Query("api_key") String api_key, @Query("language") String language, @Query("page") int page);
+    @GET("now_playing") Observable<Response> getMoviesList(@Query("api_key") String api_key,
+        @Query("language") String language, @Query("page") int page);
 
-    @FormUrlEncoded @POST("notifications") Observable<Movie> getExamNotifications(
-        @Field("page") int page, @Field("type") String type);
+    @GET("{movie_id}") Observable<Movie> getMovieDetails(@Path("movie_id") long movieId,
+        @Query("api_key") String api_key, @Query("language") String language);
   }
 
   public static MoviesApiInterface getMoviesClient() {

@@ -7,6 +7,8 @@ import java.util.List;
  */
 
 public class Movie {
+  public static final String MOVIE_ID = "movie_id";
+
   private long vote_count;
   private long id;
   private boolean video;
@@ -21,6 +23,19 @@ public class Movie {
   private boolean adult;
   private String overview;
   private String release_date;
+
+  private Collection belongs_to_collection;
+  private long budget;
+  private List<Genre> genres;
+  private String homepage;
+  private String imdb_id;
+  private List<ProductionCompany> production_companies;
+  private List<ProductionCountry> production_countries;
+  private long revenue;
+  private int runtime;
+  private List<SpokenLanguage> spoken_languages;
+  private String status;
+  private String tagline;
 
   public Movie(long vote_count, long id, boolean video, int vote_average, String title,
       double popularity, String poster_path, String original_language, String original_title,
@@ -40,6 +55,40 @@ public class Movie {
     this.adult = adult;
     this.overview = overview;
     this.release_date = release_date;
+  }
+
+  public Movie(long vote_count, long id, boolean video, float vote_average, String title,
+      double popularity, String poster_path, String original_language, String original_title,
+      String backdrop_path, boolean adult, String overview, String release_date,
+      Collection belongs_to_collection, long budget, List<Genre> genres, String homepage,
+      String imdb_id, List<ProductionCompany> production_companies,
+      List<ProductionCountry> production_countries, long revenue, int runtime,
+      List<SpokenLanguage> spoken_languages, String status, String tagline) {
+    this.vote_count = vote_count;
+    this.id = id;
+    this.video = video;
+    this.vote_average = vote_average;
+    this.title = title;
+    this.popularity = popularity;
+    this.poster_path = poster_path;
+    this.original_language = original_language;
+    this.original_title = original_title;
+    this.backdrop_path = backdrop_path;
+    this.adult = adult;
+    this.overview = overview;
+    this.release_date = release_date;
+    this.belongs_to_collection = belongs_to_collection;
+    this.budget = budget;
+    this.genres = genres;
+    this.homepage = homepage;
+    this.imdb_id = imdb_id;
+    this.production_companies = production_companies;
+    this.production_countries = production_countries;
+    this.revenue = revenue;
+    this.runtime = runtime;
+    this.spoken_languages = spoken_languages;
+    this.status = status;
+    this.tagline = tagline;
   }
 
   public long getVote_count() {
@@ -152,5 +201,101 @@ public class Movie {
 
   public void setRelease_date(String release_date) {
     this.release_date = release_date;
+  }
+
+  public Collection getBelongs_to_collection() {
+    return belongs_to_collection;
+  }
+
+  public void setBelongs_to_collection(Collection belongs_to_collection) {
+    this.belongs_to_collection = belongs_to_collection;
+  }
+
+  public long getBudget() {
+    return budget;
+  }
+
+  public void setBudget(long budget) {
+    this.budget = budget;
+  }
+
+  public List<Genre> getGenres() {
+    return genres;
+  }
+
+  public void setGenres(List<Genre> genres) {
+    this.genres = genres;
+  }
+
+  public String getHomepage() {
+    return homepage;
+  }
+
+  public void setHomepage(String homepage) {
+    this.homepage = homepage;
+  }
+
+  public String getImdb_id() {
+    return imdb_id;
+  }
+
+  public void setImdb_id(String imdb_id) {
+    this.imdb_id = imdb_id;
+  }
+
+  public List<ProductionCompany> getProduction_companies() {
+    return production_companies;
+  }
+
+  public void setProduction_companies(List<ProductionCompany> production_companies) {
+    this.production_companies = production_companies;
+  }
+
+  public long getRevenue() {
+    return revenue;
+  }
+
+  public void setRevenue(long revenue) {
+    this.revenue = revenue;
+  }
+
+  public int getRuntime() {
+    return runtime;
+  }
+
+  public void setRuntime(int runtime) {
+    this.runtime = runtime;
+  }
+
+  public List<SpokenLanguage> getSpoken_languages() {
+    return spoken_languages;
+  }
+
+  public void setSpoken_languages(List<SpokenLanguage> spoken_languages) {
+    this.spoken_languages = spoken_languages;
+  }
+
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+  public String getTagline() {
+    return tagline;
+  }
+
+  public void setTagline(String tagline) {
+    this.tagline = tagline;
+  }
+
+  public List<ProductionCountry> getProduction_countries() {
+    return production_countries;
+  }
+
+  public void setProduction_countries(List<ProductionCountry> production_countries) {
+    this.production_countries = production_countries;
   }
 }
