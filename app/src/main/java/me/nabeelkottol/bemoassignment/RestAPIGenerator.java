@@ -21,7 +21,7 @@ import retrofit2.http.Query;
 public class RestAPIGenerator {
 
   private static final String BASE_URL_PRODUCTION = "https://api.themoviedb.org/3/movie/";
-  public static final String IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
+  public static final String IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w154";
 
   private static MoviesApiInterface apiInterface;
 

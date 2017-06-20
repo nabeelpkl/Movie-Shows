@@ -39,7 +39,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
     holder.movieName.setText(movie.getTitle());
     Picasso.with(context)
         .load(RestAPIGenerator.IMAGE_BASE_URL + movie.getPoster_path())
-        .resize(600, 700)
+        .resize(350, 400)
         .centerCrop()
         .placeholder(R.drawable.ic_image_placeholder)
         //TODO: error placeholder

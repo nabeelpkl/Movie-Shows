@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     movies = new ArrayList<Movie>();
     moviesAdapter = new MovieListAdapter(this, movies);
 
-    lLayout = new GridLayoutManager(MainActivity.this, 2);
+    lLayout = new GridLayoutManager(MainActivity.this, 3);
     movieList.setHasFixedSize(true);
     movieList.setLayoutManager(lLayout);
     movieList.setAdapter(moviesAdapter);
